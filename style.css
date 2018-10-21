@@ -4,6 +4,8 @@ specificity and contextual maintainability.
 https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
 */
 
+/* general style rules and "resets" */
+
 * {
   box-sizing: border-box;
 }
@@ -15,10 +17,12 @@ html {
 body {
   background: url('./assets/background.png') no-repeat center center fixed;
   height: 100vh;
-  background-size: 75rem auto;
+  background-size: 100% auto;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* mobile first styles, can be overridden for larger (desktop) specific stlyes */
 
 .Header {
   align-items: center;
@@ -38,14 +42,14 @@ body {
 .Header__navButton {
   align-items: center;
   background-image: linear-gradient(#242424, #181818, #000000);
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #242424;
   color: #ffffff;
   display: flex;
   font-size: 1rem;
   font-weight: bold;
   justify-content: center;
-  padding: 0.6rem;
+  padding: 0.4rem 0.6rem;
   text-decoration: none;
   line-height: 1.6rem;
 }
@@ -112,14 +116,19 @@ body {
   color: #ffffff;
 }
 
+/* layout and block level element size adjustments for desktop viewports */
+
 @media (min-width: 485px) {
+  body {
+    background-size: 75rem auto;
+  }
   .Header {
     height: 6rem;
     padding: 1.2rem;
   }
   .Header__navButton {
-    font-size: 1.4rem;
-    padding: 1.2rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 0.8rem;
     line-height: 1.6rem;
   }
   /* use pseudo selector to create left arrow chevron icon */
@@ -127,15 +136,12 @@ body {
     height: 0.5rem;
     width: 0.5rem;
   }
-
   .Header__title {
     font-size: 1.8rem;
   }
-
   .Header__logo {
     width: 5rem;
   }
-
   .Main {
     margin: 6rem auto 0;
     max-width: 65rem;
@@ -147,10 +153,6 @@ body {
     margin: 0.4rem 0;
   }
   .InfoBlock__address {
-    color: #7797b6;
     margin: 0.4rem 0;
-  }
-  .InfoBlock__phone {
-    color: #ffffff;
   }
 }
