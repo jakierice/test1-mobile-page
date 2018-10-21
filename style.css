@@ -8,36 +8,59 @@ https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
   box-sizing: border-box;
 }
 
-body {
+html {
   background: #000000;
+}
+
+body {
+  background: url('./assets/background.png') no-repeat center center fixed;
+  height: 100vh;
+  background-size: 75rem auto;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .Header {
   align-items: center;
+  background: #1b1c1e;
+  border-bottom: 3px solid #252d37;
   color: #ffffff;
   display: flex;
   height: 6rem;
   justify-content: space-between;
+  left: 0;
   padding: 1.8rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 .Header__navButton {
+  align-items: center;
+  background-image: linear-gradient(#242424, #181818, #000000);
+  border-radius: 12px;
+  border: 1px solid #242424;
   color: #ffffff;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: bold;
+  justify-content: center;
+  padding: 1.2rem;
   text-decoration: none;
-  font-size: 1.5rem;
+  line-height: 1.6rem;
 }
 
+/* use pseudo selector to create left arrow chevron icon */
+
 .Header__navButton::before {
-  border-bottom: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
   content: '';
   display: inline-block;
-  height: 0.8rem;
-  margin-right: 6px;
+  height: 0.5rem;
+  margin-right: 5px;
   transform: rotate(45deg);
-  width: 0.8rem;
+  width: 0.5rem;
 }
 
 .Header__logo {
@@ -45,12 +68,20 @@ body {
 }
 
 .Main {
-  background-image: url('./assets/background.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 8rem);
-  margin: 0 auto;
+  margin: 6rem auto 0;
   max-width: 75rem;
   width: 100vw;
+  padding: 2rem 2.2rem;
+}
+
+.Hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Hero__image {
+  border: 8px solid #ffffff;
+  width: 86%;
 }
