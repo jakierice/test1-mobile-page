@@ -1,0 +1,56 @@
+/*
+Using Suit CSS naming conventions for better control of selector
+specificity and contextual maintainability.
+https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Header {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  padding: 1.8rem;
+}
+
+.Header__navButton {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.Header__navButton::before {
+  border-bottom: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  content: '';
+  display: inline-block;
+  height: 0.8rem;
+  margin-right: 6px;
+  transform: rotate(45deg);
+  width: 0.8rem;
+}
+
+.Header__logo {
+  width: 5rem;
+}
+
+.Main {
+  background-image: url('./assets/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 8rem);
+  margin: 0 auto;
+  max-width: 75rem;
+  width: 100vw;
+}
