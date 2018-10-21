@@ -15,11 +15,14 @@ html {
 }
 
 body {
-  background: url('./assets/background.png') no-repeat center center fixed;
-  height: 100vh;
+  background-attachment: fixed;
+  background-image: url('./assets/background.png');
+  background-position: center 4rem;
+  background-repeat: no-repeat;
   background-size: 100% auto;
-  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
 }
 
 /* mobile first styles, can be overridden for larger (desktop) specific stlyes */
@@ -116,10 +119,60 @@ body {
   color: #ffffff;
 }
 
+.NavLinks {
+  width: 100%;
+}
+
+.NavLinks__list {
+  padding: 0;
+  list-style: none;
+  background: #c4d1da;
+  border-radius: 12px;
+}
+
+.NavLinks__list li:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+.NavLinks__list li:last-child {
+  border-radius: 0 0 12px 12px;
+  border-bottom: 0;
+}
+
+.NavLinks__item {
+  align-items: center;
+  background: linear-gradient(#e7eaf1, #d6dee5, #c4d1da);
+  border-bottom: 2px solid #e7eaf1;
+  cursor: pointer;
+  margin-bottom: 2px;
+  color: #252d37;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.NavLinks__item::after {
+  border-top: 2px solid #252d37;
+  border-right: 2px solid #252d37;
+  content: '';
+  display: inline-block;
+  height: 0.4rem;
+  margin-right: 5px;
+  transform: rotate(45deg);
+  width: 0.4rem;
+}
+
+.NavLinks__item a {
+  color: #252d37;
+  text-decoration: none;
+}
+
 /* layout and block level element size adjustments for desktop viewports */
 
 @media (min-width: 485px) {
   body {
+    background-position: center 6rem;
     background-size: 75rem auto;
   }
   .Header {
@@ -147,6 +200,14 @@ body {
     max-width: 65rem;
     width: 100vw;
     padding: 2rem 2.2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-flow: wrap;
+  }
+  .InfoBlock {
+    width: 45%;
   }
   .InfoBlock__name {
     font-size: 2.2rem;
@@ -154,5 +215,9 @@ body {
   }
   .InfoBlock__address {
     margin: 0.4rem 0;
+  }
+
+  .NavLinks {
+    width: 50%;
   }
 }
