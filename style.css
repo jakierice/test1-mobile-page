@@ -233,8 +233,6 @@ body {
   }
   .Main {
     margin: 6rem auto 0;
-    max-width: 65rem;
-    width: 100vw;
     padding: 2rem 2.2rem;
     display: -webkit-box;
     display: -ms-flexbox;
